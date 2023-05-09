@@ -1,0 +1,6 @@
+package sarawa.saranotes
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
