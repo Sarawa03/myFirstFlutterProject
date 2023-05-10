@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1086164648763',
     projectId: 'saranotes',
     storageBucket: 'saranotes.appspot.com',
-    iosClientId: '1086164648763-42o0m5vpugohnuarnoqv4ehbjf4bd4fm.apps.googleusercontent.com',
+    iosClientId:
+        '1086164648763-42o0m5vpugohnuarnoqv4ehbjf4bd4fm.apps.googleusercontent.com',
     iosBundleId: 'sarawa.saranotes',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1086164648763',
     projectId: 'saranotes',
     storageBucket: 'saranotes.appspot.com',
-    iosClientId: '1086164648763-42o0m5vpugohnuarnoqv4ehbjf4bd4fm.apps.googleusercontent.com',
+    iosClientId:
+        '1086164648763-42o0m5vpugohnuarnoqv4ehbjf4bd4fm.apps.googleusercontent.com',
     iosBundleId: 'sarawa.saranotes',
   );
 }
