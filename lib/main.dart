@@ -20,6 +20,7 @@ void main() {
       notesRoute: (context) => const NotesView(),
       loginRoute: (context) => const LoginView(),
       registerRoute: (context) => const RegisterView(),
+      veerifyEmailRoute: (context) => const VerifyEmailView(),
     },
   ));
 }
