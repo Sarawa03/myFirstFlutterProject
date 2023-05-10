@@ -16,8 +16,9 @@ void main() {
     ),
     home: const HomePage(),
     routes: {
+      '/notes': (context) => const NotesView(),
       '/login': (context) => const LoginView(),
-      '/register': (context) => const RegisterView()
+      '/register': (context) => const RegisterView(),
     },
   ));
 }
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
             final user = FirebaseAuth.instance.currentUser;
             if (user != null) {
               if (user.emailVerified) {
-                print('Email is verified');
+                devtools.log('Email is verified');
                 return const NotesView();
                 //return Text('Email is verified');
               } else {
