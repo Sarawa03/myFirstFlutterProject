@@ -1,6 +1,8 @@
 import 'package:saranotes/services/auth/auth_user.dart';
 
 abstract class AuthProvider {
+  Future<void> initialize();
+
   AuthUser? get currentuser;
   Future<AuthUser> logIn({
     required String email,
