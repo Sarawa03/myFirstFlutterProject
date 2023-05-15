@@ -12,11 +12,16 @@ class NotesService {
   List<DatabaseNote> _notes = [];
 
   static final NotesService _shared = NotesService._sharedInstance();
-  NotesService._sharedInstance();
+  NotesService._sharedInstance() {
+    _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
+      onListen: () {
+        _notesStreamController.sink.add(_notes);
+      },
+    );
+  }
   factory NotesService() => _shared;
 
-  final _notesStreamController =
-      StreamController<List<DatabaseNote>>.broadcast();
+  late final StreamController<List<DatabaseNote>> _notesStreamController;
 
   Stream<List<DatabaseNote>> get allNotes => _notesStreamController.stream;
 
@@ -183,7 +188,7 @@ class NotesService {
       throw UserAlreadyExistsException();
     }
     final userId = await db.insert(userTable, {
-      email: email.toLowerCase(),
+      emailColumn: email.toLowerCase(),
     });
 
     return DatabaseUser(id: userId, email: email);
@@ -301,11 +306,11 @@ class DatabaseNote {
 }
 
 const dbName = 'notes.db';
-const noteTable = 'note';
+const noteTable = 'notes';
 const userTable = 'user';
 const idColumn = "id";
 const emailColumn = "email";
-const userIdColumn = "userIdColumn";
+const userIdColumn = "iduser";
 const textColumn = "text";
 const isSyncedWithCloudColumn = "is_synced_with_cloud";
 const createUserTable = '''CREATE TABLE IF NOT EXISTS "user" (
