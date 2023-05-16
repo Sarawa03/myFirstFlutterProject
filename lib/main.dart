@@ -3,7 +3,7 @@ import 'package:path/path.dart';
 import 'package:saranotes/constants/routes.dart';
 import 'package:saranotes/services/auth/auth_services.dart';
 import 'package:saranotes/views/login_view.dart';
-import 'package:saranotes/views/notes/new_note_view.dart';
+import 'package:saranotes/views/notes/create_update_note_view.dart';
 import 'package:saranotes/views/notes/notes_view.dart';
 import 'package:saranotes/views/register_view.dart';
 import 'package:saranotes/views/verify_email_view.dart';
@@ -22,7 +22,7 @@ void main() {
       loginRoute: (context) => const LoginView(),
       registerRoute: (context) => const RegisterView(),
       verifyEmailRoute: (context) => const VerifyEmailView(),
-      newNoteRoute: (context) => const NewNoteView(),
+      creteOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
     },
   ));
 }
