@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:saranotes/constants/routes.dart';
 import 'package:saranotes/services/auth/bloc/auth_bloc.dart';
-import 'package:saranotes/services/auth/bloc/auth_evemt.dart';
+import 'package:saranotes/services/auth/bloc/auth_event.dart';
 import 'package:saranotes/services/auth/bloc/auth_state.dart';
 import 'package:saranotes/services/auth/firebase_auth_provider.dart';
 import 'package:saranotes/views/login_view.dart';
@@ -23,10 +23,6 @@ void main() {
       child: const HomePage(),
     ),
     routes: {
-      notesRoute: (context) => const NotesView(),
-      loginRoute: (context) => const LoginView(),
-      registerRoute: (context) => const RegisterView(),
-      verifyEmailRoute: (context) => const VerifyEmailView(),
       creteOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
     },
   ));
@@ -46,6 +42,8 @@ class HomePage extends StatelessWidget {
           return const VerifyEmailView();
         } else if (state is AuthStateLoggedOut) {
           return const LoginView();
+        } else if (state is AuthStateRegistering) {
+          return const RegisterView();
         } else {
           return const Scaffold(
             body: CircularProgressIndicator(),

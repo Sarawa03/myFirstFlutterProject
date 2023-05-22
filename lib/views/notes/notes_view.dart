@@ -5,7 +5,7 @@ import 'dart:developer' as devtools show log;
 import 'package:saranotes/enums/menu_action.dart';
 import 'package:saranotes/services/auth/auth_services.dart';
 import 'package:saranotes/services/auth/bloc/auth_bloc.dart';
-import 'package:saranotes/services/auth/bloc/auth_evemt.dart';
+import 'package:saranotes/services/auth/bloc/auth_event.dart';
 import 'package:saranotes/services/cloud/cloud_note.dart';
 import 'package:saranotes/services/cloud/firebase_cloud_storage.dart';
 import 'package:saranotes/services/crud/notes_service.dart';
