@@ -9,6 +9,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       : super(const AuthStateUnintialized(isLoading: true)) {
     //Send email verification
 
+    on<AuthEventShouldRegister>(
+      (event, emit) {
+        emit(const AuthStateRegistering(
+          isLoading: false,
+          exception: null,
+        ));
+      },
+    );
+
     on<AuthEventForgotPassword>(
       (event, emit) async {
         emit(const AuthStateForgotPassword(
